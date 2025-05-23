@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SS Catering Service - Premium Catering in Chennai</title>
+    <style>
+        :root {
+            --primary: #e63946;
+            --secondary: #f1faee;
+            --dark: #1d3557;
+            --light: #a8dadc;
+            --accent: #457b9d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .social-icons {
+            margin-top: 2rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 0.5rem auto;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .contact-info {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .contact-info p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SS CATERING SERVICE</div>
+        <div class="tagline">Delicious Food. Unforgettable Events. Affordable Prices.</div>
+        <a href="#contact" class="cta-button">Book Now</a>
+        <a href="#services" class="cta-button">Our Services</a>
+        
+        <div class="social-icons">
+            <a href="https://wa.me/9444251444" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/saravananredhills?igsh=NnRjZTdkZ3FneGNt" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </header>
+    
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+                SS Catering Service is a premier catering company based in Chennai, specializing in South Indian wedding feasts, anniversary celebrations, and all types of events. With over 15 years of experience, we take pride in delivering authentic flavors, impeccable service, and memorable dining experiences at affordable prices.
+            </p>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="South Indian Wedding Food">
+                    </div>
+                    <div class="service-content">
+                        <h3>South Indian Weddings</h3>
+                        <p>Complete wedding catering with traditional South Indian banquet including biryani, curries, sweets and more. We handle everything from setup to cleanup.</p>
+                        <div class="price">Starting at ₹250 per plate</div>
+                        <a href="https://wa.me/9444251444?text=I'm%20interested%20in%20wedding%20catering%20services" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Anniversary Events">
+                    </div>
+                    <div class="service-content">
+                        <h3>Anniversary Celebrations</h3>
+                        <p>Elegant catering for anniversary parties with customizable menus including both vegetarian and non-vegetarian options.</p>
+                        <div class="price">Starting at ₹200 per plate</div>
+                        <a href="https://wa.me/9444251444?text=I'm%20interested%20in%20anniversary%20catering%20services" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Enquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Corporate Events">
+                    </div>
+                    <div class="service-content">
+                        <h3>Corporate Events</h3>
+                        <p>Professional catering for corporate meetings, conferences, and office parties with a variety of menu options.</p>
+                        <div class="price">Starting at ₹180 per plate</div>
+                        <a href="https://wa.me/9444251444?text=I'm%20interested%20in%20corporate%20catering%20services" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Enquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="menu">
+        <div class="container">
+            <h2>Our Signature Dishes</h2>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chettinad Chicken">
+                    </div>
+                    <div class="service-content">
+                        <h3>Chettinad Chicken</h3>
+                        <p>Spicy and aromatic chicken curry made with freshly ground Chettinad spices.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Vegetable Biryani">
+                    </div>
+                    <div class="service-content">
+                        <h3>Vegetable Biryani</h3>
+                        <p>Fragrant basmati rice cooked with mixed vegetables and authentic spices.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gulab Jamun">
+                    </div>
+                    <div class="service-content">
+                        <h3>Gulab Jamun</h3>
+                        <p>Soft, melt-in-your-mouth milk balls soaked in rose-scented sugar syrup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="gallery">
+        <div class="container">
+            <h2>Our Work</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519683109079-d5f539e1542f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wedding Setup">
+                    <div class="gallery-caption">Grand Wedding Setup</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540420828642-fca2c5c18abe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Food Display">
+                    <div class="gallery-caption">Elegant Food Display</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="South Indian Thali">
+                    <div class="gallery-caption">Traditional South Indian Thali</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Anniversary Cake">
+                    <div class="gallery-caption">Anniversary Cake Cutting</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Devaki Street, Redhills, Chennai - 600052</p>
+                <p><i class="fas fa-phone-alt"></i> <strong>Phone:</strong> <a href="tel:9444251444" style="color: white;">9444251444</a></p>
+                <p><i class="fab fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/9444251444" target="_blank" style="color: white;">Chat Now</a></p>
+                <p><i class="fab fa-instagram"></i> <strong>Instagram:</strong> <a href="https://www.instagram.com/saravananredhills?igsh=NnRjZTdkZ3FneGNt" target="_blank" style="color: white;">@saravananredhills</a></p>
+                
+                <div style="margin-top: 2rem;">
+                    <a href="https://wa.me/9444251444?text=I'd%20like%20to%20book%20your%20catering%20services" class="cta-button" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+                    <a href="https://www.instagram.com/saravananredhills?igsh=NnRjZTdkZ3FneGNt" class="cta-button" target="_blank" style="background-color: #E1306C;"><i class="fab fa-instagram"></i> DM on Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 SS Catering Service. All Rights Reserved.</p>
+        <p>Delivering deliciousness to your events since 2008</p>
+    </footer>
+</body>
+</html>
